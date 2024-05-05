@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 const App = () => {
     const {isAuthenticated, setIsAuthenticated, setUser} = useContext(Context);
     useEffect(()=>{
@@ -30,8 +31,10 @@ const App = () => {
 
     return (
         <>
+        
         <Router>
-            <Navbar/>
+        <Navbar/>
+           
             <Routes>
                 <Route path='/'element={<Home/>}/>
                 <Route path='/appointment'element={<Appointment/>}/>
@@ -41,8 +44,10 @@ const App = () => {
 
             </Routes>
             <ToastContainer position="top-center"/>
+            <Footer/>
 
         </Router>
+
 
         </>
     );
